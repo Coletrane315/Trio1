@@ -1,6 +1,8 @@
 package com.example.trio1.ui.Settings;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import com.example.trio1.databinding.SettingsFragmentBinding;
 
 import android.os.Bundle;
 
@@ -11,28 +13,36 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.trio1.R;
 
 public class SettingsFragment extends Fragment {
 
-    private SettingsViewModel mViewModel;
+    private SettingsViewModel settingsViewModel;
+    private SettingsFragmentBinding binding;
 
-    public static SettingsFragment newInstance() {
-        return new SettingsFragment();
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        settingsViewModel =
+                new ViewModelProvider(this).get(SettingsViewModel.class);
+
+        binding = SettingsFragmentBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        final TextView textView = binding.textNotifications;
+        settingsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                textView.setText(s);
+            }
+        });
+        return root;
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.settings_fragment, container, false);
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
-        // TODO: Use the ViewModel
-    }
-
 }
