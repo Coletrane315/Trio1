@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Stamm/AndroidStudioProjects/Trio1/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/chenc/AndroidStudioProjects/Trio1/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/chenc/AndroidStudioProjects/Trio1/app/src/main/res/layout/fav_fragment.xml" value="0.19176654507556018" />
+        <entry key="..\:/Users/chenc/AndroidStudioProjects/Trio1/app/src/main/res/layout/search_fragment.xml" value="0.19176654507556018" />
+        <entry key="..\:/Users/chenc/AndroidStudioProjects/Trio1/app/src/main/res/layout/triologin.xml" value="0.25" />
+        <entry key="..\:/Users/chenc/AndroidStudioProjects/Trio1/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19166666666666668" />
       </map>
     </option>
   </component>

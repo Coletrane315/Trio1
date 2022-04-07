@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_search">
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.trio1.ui.Search.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/search_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.trio1.ui.Profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/profile_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.trio1.ui.Settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/settings_fragment" />
+    <fragment
+        android:id="@+id/navigation_fav"
+        android:name="com.example.trio1.ui.Fav.FavFragment"
+        android:label="@string/fav"
+        tools:layout="@layout/fav_fragment" />
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.trio1.ui.Fav.FavFragment"
+        android:label="@string/login"
+        tools:layout="@layout/triologin" >
+    </fragment>
+</navigation>
