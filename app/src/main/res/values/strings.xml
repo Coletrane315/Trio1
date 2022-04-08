@@ -9,7 +9,8 @@
     <string name="moto">Your favorite review app</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="save">Save</string>
+    <string name="loginButtonT">Login</string>
+    <string name="newacctT">New User? Create Account</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fav">Favorite</string>
 </resources>
