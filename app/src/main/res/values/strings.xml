@@ -1,16 +1,20 @@
 <resources>
     <string name="app_name">The Trio App</string>
     <string name="search">Search</string>
-    <string name="search1">Search...</string>
+    <string name="search1">Search…</string>
     <string name="login">Login</string>
     <string name="profile">Profile</string>
     <string name="settings">Settings</string>
     <string name="app">The TRIO</string>
     <string name="moto">Your favorite review app</string>
+    <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="loginButtonT">Login</string>
-    <string name="newacctT">New User? Create Account</string>
+    <string name="newAcctT">New User? Create Account</string>
+    <string name="createT">Create Account</string>
+    <string name="backToLoginT">Already Registered? Back to Login</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fav">Favorite</string>
+    <string name="logoutT">Log Out</string>
 </resources>

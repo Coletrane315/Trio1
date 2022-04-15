@@ -53,25 +53,26 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/loginButton"
-        android:layout_width="94dp"
+        android:id="@+id/createButton"
+        android:layout_width="180dp"
         android:layout_height="62dp"
         android:layout_marginTop="8dp"
-        android:text="@string/loginButtonT"
+        android:text="@string/createT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <Button
-        android:id="@+id/createAcctButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/newAcctT"
+        android:id="@+id/backToLoginButton"
+        android:layout_width="357dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="48dp"
         android:background="@android:color/transparent"
+        android:text="@string/backToLoginT"
         android:textColor="@android:color/holo_blue_bright"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

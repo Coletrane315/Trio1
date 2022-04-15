@@ -15,22 +15,18 @@
         android:id="@+id/navigation_profile"
         android:name="com.example.trio1.ui.Profile.ProfileFragment"
         android:label="@string/profile"
-        tools:layout="@layout/profile_fragment" />
+        tools:layout="@layout/profile_fragment"/>
 
     <fragment
         android:id="@+id/navigation_settings"
         android:name="com.example.trio1.ui.Settings.SettingsFragment"
         android:label="@string/settings"
-        tools:layout="@layout/settings_fragment" />
+        tools:layout="@layout/settings_fragment"
+        app:menu="@menu/settings_menu"/>
     <fragment
         android:id="@+id/navigation_fav"
         android:name="com.example.trio1.ui.Fav.FavFragment"
         android:label="@string/fav"
-        tools:layout="@layout/fav_fragment" />
-    <fragment
-        android:id="@+id/navigation_login"
-        android:name="com.example.trio1.ui.Fav.FavFragment"
-        android:label="@string/login"
-        tools:layout="@layout/triologin" >
+        tools:layout="@layout/fav_fragment">
     </fragment>
 </navigation>

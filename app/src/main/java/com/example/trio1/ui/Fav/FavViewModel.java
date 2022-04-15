@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class FavViewModel extends ViewModel {
-    private MutableLiveData<String> mText;
+    private final MutableLiveData<String> mText;
 
     public FavViewModel() {
         mText = new MutableLiveData<>();

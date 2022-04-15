@@ -1,48 +1,61 @@
 package com.example.trio1.ui.Settings;
 
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import com.example.trio1.databinding.SettingsFragmentBinding;
-
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.trio1.R;
+import com.example.trio1.TrioLogin;
+import com.example.trio1.databinding.SettingsFragmentBinding;
 
 public class SettingsFragment extends Fragment {
 
-    private SettingsViewModel settingsViewModel;
     private SettingsFragmentBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        settingsViewModel =
-                new ViewModelProvider(this).get(SettingsViewModel.class);
-
+        SettingsViewModel settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
         binding = SettingsFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textNotifications;
-        settingsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        settingsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
         return root;
     }
 
+    public void onStart() {
+        setHasOptionsMenu(true);
+        super.onStart();
+
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater){
+        inflater.inflate(R.menu.settings_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.logOutMenuB){
+            Intent intent = new Intent(getActivity(), TrioLogin.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

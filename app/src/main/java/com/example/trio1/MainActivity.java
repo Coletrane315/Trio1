@@ -1,26 +1,31 @@
 package com.example.trio1;
+
+import android.content.Intent;
 import android.os.Bundle;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
 import com.example.trio1.databinding.ActivityMainBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-import android.os.Bundle;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
+
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.example.trio1.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -33,9 +38,19 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-        myRef.setValue("Hello, World!");
+    }
+
+    protected void onStart(){
+        super.onStart();
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if(user == null){
+            startActivity(new Intent(MainActivity.this, TrioLogin.class));
+        }
+        Objects.requireNonNull(user).sendEmailVerification().addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                Toast.makeText(getApplicationContext(), "Verification email sent", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
