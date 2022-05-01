@@ -2,16 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/app"
-        android:layout_width="216dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="208dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="100dp"
+        android:capitalize="none"
         android:text="@string/app"
-        android:textColor="@color/black"
-        android:textSize="48sp"
+        android:textColor="#C10142"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +24,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/moto"
-        android:textColor="@color/black"
+        android:textColor="#85B6184E"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app" />
@@ -31,26 +34,26 @@
         android:id="@+id/email"
         android:layout_width="284dp"
         android:layout_height="58dp"
-        android:layout_marginTop="60dp"
-        android:hint="@string/email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/moto"
+        android:layout_marginTop="44dp"
         android:autofillHints="emailAddress"
-        android:inputType="textEmailAddress" />
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moto" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="278dp"
         android:layout_height="49dp"
+        android:autofillHints="password"
         android:hint="@string/password"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        android:autofillHints="password"
-        android:inputType="textPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <Button
         android:id="@+id/loginButton"
@@ -67,11 +70,11 @@
         android:id="@+id/createAcctButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/newAcctT"
+        android:layout_marginTop="48dp"
         android:background="@android:color/transparent"
+        android:text="@string/newAcctT"
         android:textColor="@android:color/holo_blue_bright"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
