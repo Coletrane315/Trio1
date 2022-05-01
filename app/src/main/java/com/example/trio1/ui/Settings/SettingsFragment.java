@@ -17,11 +17,14 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.trio1.R;
 import com.example.trio1.TrioLogin;
 import com.example.trio1.databinding.SettingsFragmentBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SettingsFragment extends Fragment {
 
     private SettingsFragmentBinding binding;
-
+    FirebaseAuth mAuth;
+    FirebaseUser user;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         SettingsViewModel settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
@@ -36,6 +39,7 @@ public class SettingsFragment extends Fragment {
 
     public void onStart() {
         setHasOptionsMenu(true);
+        mAuth = FirebaseAuth.getInstance();
         super.onStart();
 
     }
@@ -53,6 +57,7 @@ public class SettingsFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.logOutMenuB){
+            mAuth.signOut();
             Intent intent = new Intent(getActivity(), TrioLogin.class);
             startActivity(intent);
         }

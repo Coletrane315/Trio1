@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
@@ -56,6 +57,13 @@ public class TrioRegister extends Activity {
             mAuth.createUserWithEmailAndPassword(regEmail, regPassword).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
                     Toast.makeText(TrioRegister.this, "User Account Created", Toast.LENGTH_SHORT).show();
+                    mAuth.signInWithEmailAndPassword(regEmail, regPassword);
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    Objects.requireNonNull(user).sendEmailVerification().addOnCompleteListener(task2 -> {
+                        if(task2.isSuccessful()){
+                            Toast.makeText(getApplicationContext(), "Verification email sent", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                     startActivity(new Intent(TrioRegister.this, MainActivity.class));
                 }else{
                     Toast.makeText(TrioRegister.this,
