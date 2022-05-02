@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         if(user == null){
             startActivity(new Intent(MainActivity.this, TrioLogin.class));
         }
+        startActivity(new Intent(MainActivity.this, searchRestaurant.class));
     }
 
     public void checkPermissions(String permission, int requestCode){

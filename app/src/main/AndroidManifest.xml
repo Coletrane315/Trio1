@@ -30,6 +30,11 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".searchRestaurant"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

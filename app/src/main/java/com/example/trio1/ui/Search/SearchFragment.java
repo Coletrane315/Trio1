@@ -23,7 +23,7 @@ public class SearchFragment extends Fragment {
         binding = SearchFragmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
+        final TextView textView = binding.restName;
         searchViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
