@@ -17,5 +17,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fav">Favorite</string>
     <string name="logoutT">Log Out</string>
-    <string name="blank" />
+    <string name="blank"></string>
+    <string name="addressText">Address:</string>
+    <string name="ratingText">Average User Rating: </string>
+    <string name="nameText">Name</string>
+    <string name="reviewButtonT">Reviews</string>
+    <string name="distanceText">Distance:</string>
+    <string name="tempReviewT">Use Yelp API to get reviews of a restaurant by place ID</string>
+    <string name="nullText">null</string>
 </resources>
